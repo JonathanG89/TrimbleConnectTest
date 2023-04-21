@@ -12,7 +12,7 @@
 		};
 		
 		async function getData() {
-			var API = await TrimbleConnectWorkspace.connect(window.parent, (event, data) => {
+			API = await TrimbleConnectWorkspace.connect(window.parent, (event, data) => {
 				console.log("Event: ", event, data);
 			});
 		}
