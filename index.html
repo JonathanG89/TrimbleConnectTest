@@ -19,6 +19,27 @@
 			API.project.getProject().then(project => {
 				console.log(project); // Trimble Connect project details
 			});
+			
+			
+			const axios = require('axios');
+			const accessToken = 'your-access-token';
+			const workspaceId = 'your-workspace-id';
+
+			axios.get(`https://tc-api.trimble.com/api/nodes?includeProperties=true&workspaceId=${workspaceId}`, {
+			  headers: {
+			    Authorization: `Bearer ${accessToken}`,
+			  },
+			})
+			  .then((response) => {
+			    const nodes = response.data.nodes;
+			    nodes.forEach((node) => {
+			      console.log(`Node: ${node.name}`);
+			      console.log(`Properties: ${JSON.stringify(node.properties)}`);
+			    });
+			  })
+			  .catch((error) => {
+			    console.error(error);
+			  });
 		}
 	</script>
 
