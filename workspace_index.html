@@ -33,7 +33,8 @@
 			  30000
 			);
 
-			console.log(this.API);
+			console.log(API);
+			console.log(API.extension);
 			
 			//Request for the access token.
 			API.extension.getPermission("accesstoken").then((accessToken) => {
