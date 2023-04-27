@@ -19,6 +19,8 @@ this.API = await WorkspaceAPI.connect(
   30000
 );
 
+console.log(this.API);
+
 //Request for the access token.
 this.API.extension.getPermission("accesstoken").then((accessToken: string) => {
     //Current user access token or status: accessToken
