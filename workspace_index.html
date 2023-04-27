@@ -5,9 +5,9 @@
 </head>
   <body>
   
+	  <script src="https://components.connect.trimble.com/trimble-connect-workspace-api/index.js"></script>
+	  
 	  <script>
-		import * as WorkspaceAPI from "trimble-connect-workspace-api";
-
 		this.API = await WorkspaceAPI.connect(
 		  window.parent,
 		  (event, args) => {
