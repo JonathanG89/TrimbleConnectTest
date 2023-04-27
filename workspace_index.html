@@ -14,7 +14,7 @@
 		getData();
 		  
 		async function getData() {
-			this.API = await WorkspaceAPI.connect(
+			this.API = await TrimbleConnectWorkspace.connect(
 			  window.parent,
 			  (event, args) => {
 			    switch (event) {
