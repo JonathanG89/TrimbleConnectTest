@@ -14,7 +14,7 @@
 		getData();
 		  
 		async function getData() {
-			this.API = await TrimbleConnectWorkspace.connect(
+			API = await TrimbleConnectWorkspace.connect(
 			  window.parent,
 			  (event, args) => {
 			    switch (event) {
@@ -37,7 +37,7 @@
 		}
 		  
 		//Request for the access token.
-		this.API.extension.getPermission("accesstoken").then((accessToken) => {
+		API.extension.getPermission("accesstoken").then((accessToken) => {
 		    //Current user access token or status: accessToken
 		    console.log(accesstoken);
 		});
