@@ -12,9 +12,7 @@
 <script type="text/javascript">
     console.log("Test log");
 
-    window.onload = (event) => {
-       getData();
-    };
+    getData();
 
     async function getData() {
      API = await TrimbleConnectWorkspace.connect(window.parent, (event, data) => {
