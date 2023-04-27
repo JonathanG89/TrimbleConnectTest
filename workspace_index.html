@@ -37,11 +37,10 @@
 			console.log(API.extension);
 			
 			//Request for the access token.
-			API.extension.getPermission("accesstoken").then((accessToken) => {
-			    //Current user access token or status: accessToken
+			API.extension.getPermission("accesstoken").then(accessToken => {
+			    	//Current user access token or status: accessToken
+				console.log(accesstoken);
 			});
-			
-			console.log(accesstoken);
 		}
 
 	  </script>
