@@ -16,5 +16,3 @@
      });
     }
  </script>
-
- <script src="https://components.connect.trimble.com/trimble-connect-workspace-api/index.js"></script>
