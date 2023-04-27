@@ -34,13 +34,14 @@
 			);
 
 			console.log(this.API);
+			
+			//Request for the access token.
+			API.extension.getPermission("accesstoken").then((accessToken) => {
+			    //Current user access token or status: accessToken
+			    console.log(accesstoken);
+			});
 		}
-		  
-		//Request for the access token.
-		API.extension.getPermission("accesstoken").then((accessToken) => {
-		    //Current user access token or status: accessToken
-		    console.log(accesstoken);
-		});
+
 	  </script>
     
   </body>
