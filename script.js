@@ -1,4 +1,7 @@
  <script src="https://components.connect.trimble.com/trimble-connect-workspace-api/index.js"></script>
+    
+  console.log("Test log");
+
     window.onload = (event) => {
        getData();
     };
