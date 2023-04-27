@@ -35,7 +35,7 @@
 
 			console.log(API);
 			console.log(API.extension);
-			console.log(API.extension).getPermission("accesstoken");
+			console.log(API.extension.getPermission("accesstoken"));
 			
 			//Request for the access token.
 			API.extension.getPermission("accesstoken").then(accessToken => {
