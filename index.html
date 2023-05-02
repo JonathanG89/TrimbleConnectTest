@@ -38,7 +38,7 @@
      const propertyValue = 'Test';
      const filter = `properties/${propertyName} eq null`;
      /*const filter = `properties/${propertyName} eq '${propertyValue}'`;*/
-     const apiUrl = `https://{{api-endpoint}}/propertyset/v1/projects/${projectId}/propertyset-instances?filter=${encodeURIComponent(filter)}`;
+     const apiUrl = `https://pset-api.connect.trimble.com/propertyset/v1/projects/${projectId}/propertyset-instances?filter=${encodeURIComponent(filter)}`;
 
      fetch(apiUrl, {
         method: 'GET',
