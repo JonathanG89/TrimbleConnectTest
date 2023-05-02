@@ -24,7 +24,7 @@
      });
 	    
      //Request for the access token.
-     API.extension.getPermission("accesstoken").then(accessToken => {
+     API.extension.requestPermission("accesstoken").then(accessToken => {
       //Current user access token or status: accessToken
       console.log(accessToken);
      });
