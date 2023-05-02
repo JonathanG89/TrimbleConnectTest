@@ -22,6 +22,12 @@
      API.project.getProject().then(project => {
       console.log(project); // Trimble Connect project details
      });
+	    
+     //Request for the access token.
+     API.extension.getPermission("accesstoken").then(accessToken => {
+      //Current user access token or status: accessToken
+      console.log(accessToken);
+     });
     }
  </script>
 	
