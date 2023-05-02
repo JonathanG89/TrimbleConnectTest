@@ -43,19 +43,21 @@
      /*const filter = `properties/${propertyName} eq '${propertyValue}'`;*/
      const apiUrl = `https://pset-api.connect.trimble.com/propertyset/v1/projects/${projectId}/propertyset-instances?filter=${encodeURIComponent(filter)}`;
 
-     fetch(apiUrl, {
+     const responseData = await fetch(apiUrl, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${myAccessToken}`
         },
      })
-     .then(response => response.json())
+     console.log('response data from trimble : ', responseData);
+	    
+     <!-- .then(response => response.json())
      .then(data => {
         const propertySetInstances = data.data;
         // Use the propertySetInstances array to access the entities that match the filter
         console.log(propertySetInstances)
-     });
+     }); -->
             
     }
  </script>
