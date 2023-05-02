@@ -11,6 +11,9 @@
   
 <script type="text/javascript">
     console.log("Test log");
+    
+    var projectId;
+    var myAccessToken;
 	
     getData();
 
@@ -21,14 +24,14 @@
 
      API.project.getProject().then(project => {
         console.log(project); // Trimble Connect project details
-        var projectId = project.id;
+        projectId = project.id;
      });
 	    
      //Request for the access token.
      API.extension.requestPermission("accesstoken").then(accessToken => {
         //Current user access token or status: accessToken
         console.log(accessToken);
-	var myAccessToken = accessToken;    
+	myAccessToken = accessToken;    
      });
        
      const propertyName = 'Propriété Test';
