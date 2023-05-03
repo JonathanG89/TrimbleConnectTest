@@ -37,9 +37,7 @@
 	myAccessToken = accessToken;    
      });
 	    
-     console.log(window.location.origin);
-     const linkUrl = ``
-     const apiUrl = `https://pset-api.connect.trimble.com/v1/psets/${encodeURIComponent(linkUrl)}`;
+     const apiUrl = `https://pset-api.connect.trimble.com/v1/psets/${projectId}`;
      const responseData = await fetch(apiUrl, {
         method: 'GET',
         headers: {
