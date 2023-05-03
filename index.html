@@ -38,6 +38,7 @@
           'Authorization': `Bearer ${accessToken}`
         },
      })
+     const jsonData = await responseData.json();
 	    
      /*const propertyName = 'Propriété Test';
      const propertyValue = 'Test';
@@ -52,9 +53,9 @@
         },
      })
      */
+	    
      console.log('response : ', responseData);
-     console.log('response json : ', responseData.json());
-     console.log('response data : ', responseData.data);
+     console.log('response json : ', jsonData);
 
     }
  </script>
