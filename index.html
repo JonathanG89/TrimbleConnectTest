@@ -37,10 +37,18 @@
 	myAccessToken = accessToken;    
      });
        
-     const propertyName = 'Propriété Test';
+     const apiUrl = 'https://pset-api.connect.trimble.com/v1/psets/${encodeURIComponent(projectId)}';
+     const responseData = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${myAccessToken}`
+        },
+     })
+	    
+     /*const propertyName = 'Propriété Test';
      const propertyValue = 'Test';
-     const filter = `properties/${propertyName} eq null`;
-     /*const filter = `properties/${propertyName} eq '${propertyValue}'`;*/
+     const filter = `properties/${propertyName} ne null`;
      const apiUrl = `https://pset-api.connect.trimble.com/propertyset/v1/projects/${projectId}/propertyset-instances?filter=${encodeURIComponent(filter)}`;
 
      const responseData = await fetch(apiUrl, {
@@ -50,15 +58,9 @@
           'Authorization': `Bearer ${myAccessToken}`
         },
      })
+     */
      console.log('response data from trimble : ', responseData);
-	    
-     /*.then(response => response.json())
-     .then(data => {
-        const propertySetInstances = data.data;
-        // Use the propertySetInstances array to access the entities that match the filter
-        console.log(propertySetInstances)
-     }); */
-            
+
     }
  </script>
 	
