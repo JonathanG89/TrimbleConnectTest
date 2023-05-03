@@ -14,10 +14,7 @@
 <script type="text/javascript"
 	slave="https://pset-api.connect.trimble.com/v1/proxy.html">
     console.log("Test log");
-    
-    var projectId;
-    var myAccessToken;
-	
+    	
     getData();
 
     async function getData() {
@@ -25,24 +22,20 @@
         console.log("Event: ", event, data);
      });
 
-     API.project.getProject().then(project => {
-        console.log(project); // Trimble Connect project details
-        projectId = project.id;
-     });
+     const responseProject = await API.project.getProject();
+     console.log(responseProject); // Trimble Connect project details
+     const projectId = responseProject.id;
 	    
-     //Request for the access token.
-     API.extension.requestPermission("accesstoken").then(accessToken => {
-        //Current user access token or status: accessToken
-        console.log(accessToken);
-	myAccessToken = accessToken;    
-     });
+     const responseAccessToken = await API.extension.requestPermission("accesstoken");
+     console.log(responseAccessToken);
+     const accessToken = responseAccessToken;    
 	    
      const apiUrl = `https://pset-api.connect.trimble.com/v1/psets/${projectId}`;
      const responseData = await fetch(apiUrl, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${myAccessToken}`
+          'Authorization': `Bearer ${accessToken}`
         },
      })
 	    
@@ -55,7 +48,7 @@
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${myAccessToken}`
+          'Authorization': `Bearer ${accessToken}`
         },
      })
      */
